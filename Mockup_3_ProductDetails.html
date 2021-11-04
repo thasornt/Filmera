@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 
+        DES322 Class-08
+        StudentID: 6222770016
+        Student Name: Thasorn Thongsricharoen
+        TA Group: G1
+        Digital Business: Filmera Online Store
+        Created Date: 14-10-2021
+    -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!-- For Rating Stars CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Title -->
+    <title>Filmera</title>
+
+    <!-- Add icon-->
+    <link rel = "icon" href = "/Images/Flimera Logo.png" type = "image/x-icon">
+
+</head>
+<body>
+
+    <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar" style="background-color:#141414;">
+        <!-- Header -->
+        <a class="navbar-brand" href="/Mockup_1_HomePage.html"> <img src="/Images/Flimera Logo (h).png" height="50" alt=""> 
+        </a>
+        
+        <div class="navbar-nav-scroll">
+            <ul class="navbar-nav bd-navbar-nav flex-row">
+                <li class="nav-item">
+                    <a class="nav-link" href="/Mockup_1_HomePage.html">HOME <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/Mockup_2_Category.html">FILM CAMERAS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">PHOTOGRAPHIC FILMS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">ACCESSORIES</a>
+                </li>
+            </ul>
+        </div>
+    
+        <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+            <li class="nav-item">
+                <a class="nav-link" href="#"><img src="/Images/Cart w.png" width="30" height="30"> </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><img src="/Images/Profile w.png" width="30" height="30"> </a>
+            </li>
+        </ul>
+    </header>
+
+    <div name='product details head' class= ''>
+        <!-- Product details header -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6" style="padding: 50px">
+                    <div id="demo" class="carousel slide" data-ride="carousel">
+
+                        <!-- Indicators -->
+                        <ul class="carousel-indicators">
+                        <li data-target="#demo" data-slide-to="0" class="active"></li>
+                        <li data-target="#demo" data-slide-to="1"></li>
+                        <li data-target="#demo" data-slide-to="2"></li>
+                        <li data-target="#demo" data-slide-to="3"></li>
+                        </ul>
+                    
+                        <!-- The slideshow -->
+                        <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="/Images/Minolta hi-matic f black 1 1972.png" alt="1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/Images/Minolta hi-matic f black 2 1972.png" alt="2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/Images/Minolta hi-matic f black 3 1972.png" alt="3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/Images/Minolta hi-matic f black 4 1972.png" alt="4">
+                        </div>
+                        </div>
+                    
+                        <!-- Left and right controls -->
+                        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                        </a>
+                    
+                    </div>
+                </div>
+
+                <!-- Details on the right -->
+                <div class="col-md-4" style="padding-top: 100px;">
+                    <h5>Minolta Hi-Matic F Black (1972)</h5>
+                    <p>5,490 THB</p>
+                    <form>
+                        <div class="form-row align-items-center">
+                        <div class="col-auto my-1">
+                            <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                            <option selected>1</option>
+                            </select>
+                        </div>
+                        </div>
+                    </form>
+                    <button type="button" class="btn btn-dark">Add to cart</button>           
+                </div>
+                <div class="col-md-2" style="padding-top: 100px;">
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <p>(2 reviewers)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div name='product details' class= '' style="padding-bottom: 50px;">
+        <!-- product details -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12" style="padding-bottom: 50px;">
+                    <h2 style="text-align: center;">Overview</h2>
+                    <p class="" style="margin-left: 80px; margin-right: 80px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id dignissim justo, et semper metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam sit amet pellentesque mauris. Morbi lacinia bibendum odio non fermentum. Vestibulum pulvinar aliquam augue, id laoreet nisi semper a. Donec iaculis rutrum diam, quis volutpat magna viverra et. In at molestie ipsum, eget luctus turpis. Nunc dapibus justo ac augue fringilla, in gravida orci tristique. Aenean in nisi accumsan, scelerisque sapien sed, efficitur sem. Vivamus metus sapien, ultrices vel hendrerit vitae, vehicula in elit.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 style="text-align: center;">Specs</h2>
+                    <p class="" style="margin-left: 80px; margin-right: 80px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id dignissim justo, et semper metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam sit amet pellentesque mauris. Morbi lacinia bibendum odio non fermentum. Vestibulum pulvinar aliquam augue, id laoreet nisi semper a. Donec iaculis rutrum diam, quis volutpat magna viverra et. In at molestie ipsum, eget luctus turpis.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div name='product reviews' class= '' style="background-color: #e6e6e6;">
+        <!-- product reviews -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 style="text-align: center; padding-top: 15px;">Reviews</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6" style="padding-left:100px; padding-top:25px; padding-bottom: 25px;">
+                    <div class="card mb-6 box-shadow">
+                        <div class="card-body" style='text-align: left; font-size: medium;'>
+                            <p class="card-text"><span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span>Ann97</span></p>
+                            <p class="card-text" style="font-weight: bold;">GREAT!</p>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" style="padding-right:100px; padding-top:25px; padding-bottom: 25px;">
+                    <div class="card mb-6 box-shadow">
+                        <div class="card-body" style='text-align: left; font-size: medium;'>
+                            <p class="card-text"><span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span>Bee789</span></p>
+                            <p class="card-text" style="font-weight: bold;">The Best!!</p>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div name='recommended products' class= ''>
+        <!-- Recommeded Products -->
+        <div class="container-fluid">
+            <div class= "row" style="text-align:center">
+                <div class="col-md-12" style="margin-top: 30px;">
+                    <h2>You may also like</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4" style="padding-left: 80px; padding-right: 80px;">
+                    <img class="card-img-top" alt="Thumbnail [100%x225]" src="/Images/Olympus 35sp 1969.png" style="margin-top: 50px;">
+                    <div class="card-body">
+                        <p class="card-text" style='text-align: center; font-size: medium; font-weight: bold;'> Olympus 35SP (1969) </p>
+                        <p class="card-text" style='text-align: center; font-size: medium;'> 9,990 THB </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="col text-center">
+                                <button type="button" class="btn btn-dark">Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding-left: 120px; padding-right: 120px; padding-bottom: 20px;">
+                    <img class="card-img-top" alt="Thumbnail [100%x225]" src="/Images/Kodak Color Plus 200.png" style="margin-top: 20px;">
+                    <div class="card-body">
+                        <p class="card-text" style='text-align: center; font-size: medium; font-weight: bold;'> Kodak Color Plus 200 (135/35MM) </p>
+                        <p class="card-text" style='text-align: center; font-size: medium;'> 110 THB </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="col text-center">
+                                <button type="button" class="btn btn-dark">Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+                <div class="col-md-4" style="padding-left: 120px; padding-right: 120px; padding-bottom: 20px;">
+                    <img class="card-img-top" alt="Thumbnail [100%x225]" src="/Images/Fuji Color C200.png" style="margin-top: 35px;">
+                    <div class="card-body">
+                        <p class="card-text" style='text-align: center; font-size: medium; font-weight: bold;'> Fuji Color C200 (135/35MM) </p>
+                        <p class="card-text" style='text-align: center; font-size: medium;'> 150 THB </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="col text-center">
+                                <button type="button" class="btn btn-dark">Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div name='footer' class = ''>
+        <!-- Footer -->
+        <footer class="text-muted" style="background: #141414; height: 120px;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-2" style="margin-top: 20px; margin-left: 10px; text-align: center;">
+                        <a class="navbar-brand" href="#"> <img src="/Images/Flimera Logo (v).png" height="70" alt=""> </a>
+                    </div>
+                    <div class="col-md-3" style="font-size: small; margin-top: 20px;">
+                        <address>
+                            <strong>Filmera, Inc.</strong><br /> 795 Folsom Ave, Suite 600<br /> San Francisco, CA 94107<br /> <abbr title="Phone">P:</abbr> (123) 456-7890
+                        </address>
+                    </div>
+                    <div class="col-md-3" style="margin-top: 10px">
+                        <ul class="list-unstyled text-small" style="font-size: small;">
+                            <h6>Explore</h6>
+                            <li><a class="text-muted" href="/Mockup_2_Category.html">Film Cameras</a></li>
+                            <li><a class="text-muted" href="#">Photograpic Films</a></li>
+                            <li><a class="text-muted" href="#">Accessories</a></li>
+                            <li><a class="text-muted" href="#">Contact us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="row">
+                            <div class="col-md-6">
+                            </div>
+                            <div class="col-md-6" style="margin-top: 20px;">
+                                <a class="navbar-item" href="#"> <img src="/Images/instagram.png" width="30" height="30" alt=""> </a>
+                                <a class="navbar-item" href="#"> <img src="/Images/facebook.png" width="30" height="30" alt=""> </a> 
+                                <a class="navbar-item" href="#"> <img src="/Images/twitter.png" width="30" height="30" alt=""> </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" style="margin-top: 20px; font-size: small;">
+                                <p class="text"> © Filmera. All rights reserved. Terms of Service.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+</body>
+</html>
