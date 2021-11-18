@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 
+        DES322 Class-08
+        StudentID: 6222770016
+        Student Name: Thasorn Thongsricharoen
+        TA Group: G1
+        Digital Business: Filmera Online Store
+        Created Date: 14-10-2021
+    -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!-- Title -->
+    <title>Filmera</title>
+
+    <!-- Add icon-->
+    <link rel = "icon" href = "Images/Flimera Logo.png" type = "image/x-icon">
+
+</head>
+<body>
+    <div id = "app">
+        <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar" style="background-color:#141414;">
+            <!-- Header -->
+            <a class="navbar-brand" href="HomePage.html"> <img src="Images/Flimera Logo (h).png" height="50" alt=""> 
+            </a>
+            
+            <div class="navbar-nav-scroll">
+                <ul class="navbar-nav bd-navbar-nav flex-row">
+                    <li class="nav-item">
+                        <a class="nav-link" href="HomePage.html">HOME <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item" v-on:click="ShowHomePage">
+                        <a class="nav-link active" href="#">FILM CAMERAS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">PHOTOGRAPHIC FILMS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">ACCESSORIES</a>
+                    </li>
+                </ul>
+            </div>
+    
+            <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+                <li class="nav-item" v-on:click="ShowMyCart">
+                    <a class="nav-link" href="#"><img src="Images/Cart w.png" width="30" height="30">({{countitem}})</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><img src="Images/Profile w.png" width="30" height="30"> </a>
+                </li>
+            </ul>
+        </header>
+    
+        <!-- Product -->
+        <div class="container" style="margin-bottom: 30px;" v-if="product_page">
+            <div name='cat name' class = '' style="margin-bottom: 30px;">
+                <!-- Product catagory header - Film Cameras -->
+                <div class="container-fluid">
+                    <section class="row no-gutter align-items-center">
+                        <div class="col-lg-12 text-center p-0 d-flex align-items-center">
+                            <img class="img-fluid position-relative mx-auto" src="Images/Film camera Cat cut.jpg" alt="">
+                            <h1 class="w-100 position-absolute text-light my-auto"> FILM CAMERAS </h1>
+                        </div>
+                    </section>
+                </div>
+            </div> 
+            <hr/>
+            <div class="home container">
+                <div class="row">
+                    <div class="col-md-12 pt-5">
+                        <div class="row equal row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-4">
+                            <Product v-on:add-item="addItem" v-for="product in products" :product="product" :key="product.id" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cart -->
+        <div class="container" style="margin-bottom: 50px;" v-if="cart_page">
+            <div name='cat name' class = '' style="margin-bottom: 30px;">
+                <!-- Cart header -->
+                <div class="container-fluid">
+                    <section class="row no-gutter align-items-center">
+                        <div class="col-lg-12 text-center p-0 d-flex align-items-center">
+                            <img class="img-fluid position-relative mx-auto" src="Images/Film camera Cat cut.jpg" alt="">
+                            <h1 class="w-100 position-absolute text-light my-auto"> MY SHOPPING CART </h1>
+                        </div>
+                    </section>
+                </div>
+            </div> 
+            <table class="table" style="margin-top: 20px;">
+                <tbody>
+                    <colgroup>
+                        <col style="width:30%">
+                        <col style="width:30%">
+                        <col style="width:30%">
+                        <col style="width:10%">
+                    </colgroup>
+                    <tr> 
+                        <th>Product Title</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Remove from cart</th>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="home container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <CartItem v-on:delete-item="deleteItem" v-for="item in cart" :item="item" :key="item.id" />
+                    </div>
+                </div>
+            </div>
+            <div style="float: right;"><strong>Total = ฿{{totalprice}}</strong></div>
+        </div>
+    </div>
+
+    <div name='footer' class = ''>
+        <!-- Footer -->
+        <footer class="text-muted" style="background: #141414; height: 120px;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-2" style="margin-top: 20px; margin-left: 10px; text-align: center;">
+                        <a class="navbar-brand" href="#"> <img src="Images/Flimera Logo (v).png" height="70" alt=""> </a>
+                    </div>
+                    <div class="col-md-3" style="font-size: small; margin-top: 20px;">
+                        <address>
+                            <strong>Filmera, Inc.</strong><br /> 795 Folsom Ave, Suite 600<br /> San Francisco, CA 94107<br /> <abbr title="Phone">P:</abbr> (123) 456-7890
+                        </address>
+                    </div>
+                    <div class="col-md-3" style="margin-top: 10px">
+                        <ul class="list-unstyled text-small" style="font-size: small;">
+                            <h6>Explore</h6>
+                            <li><a class="text-muted" href="Products.html">Film Cameras</a></li>
+                            <li><a class="text-muted" href="#">Photograpic Films</a></li>
+                            <li><a class="text-muted" href="#">Accessories</a></li>
+                            <li><a class="text-muted" href="#">Contact us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="row">
+                            <div class="col-md-6">
+                            </div>
+                            <div class="col-md-6" style="margin-top: 20px;">
+                                <a class="navbar-item" href="#"> <img src="Images/instagram.png" width="30" height="30" alt=""> </a>
+                                <a class="navbar-item" href="#"> <img src="Images/facebook.png" width="30" height="30" alt=""> </a> 
+                                <a class="navbar-item" href="#"> <img src="Images/twitter.png" width="30" height="30" alt=""> </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" style="margin-top: 20px; font-size: small;">
+                                <p class="text"> © Filmera. All rights reserved. Terms of Service.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <template id="product-template">
+        <div class="col mb-4 d-flex">
+            <div class="card">
+                <img :src="product.url" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">{{product.name}}</h5>
+                <p class="card-text">
+                    ${{product.price}}
+                    <br/>
+                    <small>
+                    {{product.shortdesc}}
+                    </small>
+                </p>
+                <button @click="addToCart()" class="btn btn-dark">Add to cart</button>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="cartitem-template">
+        <div>
+            <table class="table">
+                <tbody>
+                    <colgroup>
+                        <col style="width:30%">
+                        <col style="width:30%">
+                        <col style="width:30%">
+                        <col style="width:10%">
+                    </colgroup>
+                    <tr>
+                    <td>{{item.name}}</td>
+                    <td>{{item.count}}</td>
+                    <td>฿{{item.price}}</td>
+                    <td><button @click="deleteFromCart()" class="btn btn-danger" style="float: right;">X</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>  
+        <br>
+    </template>
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        let app = Vue.createApp({
+
+            data: function() {
+                return {
+                    
+                    product_page: true,
+                    cart_page: false,
+
+                    products: [{
+                        id: 1,
+                        name: "Minolta Hi-Matic F",
+                        price: 5490,
+                        shortdesc: "(1972)",
+                        url: "Images/Minolta hi-matic f black 1 1972.png"
+                    }, {
+                        id: 2,
+                        name: "Nikon FE Silver",
+                        price: 10900,
+                        shortdesc: "(1978)",
+                        url: "Images/Nikon fe silver 1978.png"
+                    }, {
+                        id: 3,
+                        name: "Olympus 35SP",
+                        price: 9900,
+                        shortdesc: "(1969)",
+                        url: "Images/Olympus 35sp 1969.png"
+                    }, {
+                        id: 4,
+                        name: "Olympus XA1",
+                        price: 5250,
+                        shortdesc: "(1971)",
+                        url: "Images/Olympus xa1 1971.png"
+                    }, {
+                        id: 5,
+                        name: "Olympus OM-1 MD",
+                        price: 8990,
+                        shortdesc: "(1972)",
+                        url: "Images/Olympus om-1 md.png"
+                    }, {
+                        id: 6,
+                        name: "Olympus Trip 35",
+                        price: 3150,
+                        shortdesc: "(1967)",
+                        url: "Images/Olympus trip 35 1967.png"
+                    }, {
+                        id: 7,
+                        name: "Pentax K2",
+                        price: 7990,
+                        shortdesc: "(1975)",
+                        url: "Images/Pentax k2 1975.png"
+                    }, {
+                        id: 8,
+                        name: "Konica C35",
+                        price: 3990,
+                        shortdesc: "(1968)",
+                        url: "Images/Konica c35 1968.png"
+                    }],
+
+                    cart: []
+                }
+            },
+
+            mounted: function() {
+
+            },
+
+            methods: {
+                addItem: function(id) {
+                    console.log(this.products)
+                    console.log(id)
+                    
+                    //Check if this product already in the cart
+                    item = this.cart.find(product => product.id == id)
+
+                    if (item) { // if this product already in the cart
+                        item.count += 1
+                        item.price = item.price*item.count
+                    } else {
+                        item = this.products.find(product => product.id == id)
+                        this.cart.push({
+                            id: item.id,
+                            name: item.name,
+                            price: item.price,
+                            count: 1
+                        })
+                    }
+                    console.log(this.cart)
+                },
+
+                deleteItem: function(id) {
+                    console.log(this.products)
+                    console.log(id)
+                    
+                    item = this.cart.map(item => item.id).indexOf(id)
+                    this.cart.splice(item, 1)
+
+                    console.log(this.cart)
+                },
+
+                ShowMyCart: function() {
+                    this.cart_page = true
+                    this.product_page = false
+                },
+
+                ShowHomePage: function() {
+                    this.product_page = true
+                    this.cart_page = false
+                }
+            },
+
+            computed: {
+                countitem: function() {
+                    var total = 0
+                    for (i in this.cart) {
+                        total += this.cart[i].count
+                    }
+                    return total
+                },
+
+                totalprice: function() {
+                    var totalprice = 0
+                    for (i in this.cart) {
+                        totalprice += this.cart[i].price
+                    }
+                    return totalprice
+                }
+            }
+
+        })
+
+        app.component('Product', {
+            data: function() {
+                return {}
+            },
+            props: ['product'],
+            template: "#product-template",
+
+            methods: {
+                addToCart: function() {
+                    this.$emit("add-item", this.product.id)
+                }
+
+            },
+        });
+
+        app.component('Cartitem', {
+            props: ['item'],
+            template: '#cartitem-template',
+
+            methods: {
+                deleteFromCart: function() {
+                    this.$emit("delete-item", this.item.id)
+                }
+            }
+        });
+
+        app.mount("#app")
+    </script>
+</body>
+</html>
